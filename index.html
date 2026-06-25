@@ -20,16 +20,12 @@
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden}
-
-  /* NAV */
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 48px;background:rgba(250,246,239,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--sand)}
   .nav-logo{font-family:'Lora',serif;font-size:1.5rem;font-weight:600;color:var(--amber-deep);text-decoration:none;letter-spacing:-0.02em}
   .nav-logo span{color:var(--forest)}
   .nav-links{display:flex;gap:36px;list-style:none}
   .nav-links a{text-decoration:none;font-size:0.92rem;font-weight:500;color:var(--muted);transition:color .2s}
   .nav-links a:hover,.nav-links a.active{color:var(--charcoal)}
-
-  /* HERO */
   #anasayfa{min-height:100vh;display:flex;align-items:center;padding:120px 48px 80px;position:relative;overflow:hidden}
   .hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 70% at 80% 40%,rgba(200,121,65,0.10) 0%,transparent 70%),radial-gradient(ellipse 50% 60% at 10% 80%,rgba(61,90,71,0.08) 0%,transparent 60%)}
   .hero-content{position:relative;max-width:640px}
@@ -45,8 +41,6 @@
   .float-before{font-size:0.86rem;line-height:1.9;color:var(--charcoal);background:var(--parchment);border-radius:10px;padding:12px;border-left:3px solid var(--sand);letter-spacing:-0.01em}
   .float-arrow{font-size:0.8rem;color:var(--amber);font-weight:500}
   .float-after{font-size:0.95rem;line-height:2.1;color:var(--ink);background:rgba(61,90,71,0.06);border-radius:10px;padding:12px;border-left:3px solid var(--forest);letter-spacing:0.01em;word-spacing:0.12em}
-
-  /* FEATURES */
   #ozellikler{padding:100px 48px;background:var(--parchment)}
   .section-label{font-size:0.76rem;font-weight:500;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:10px}
   .section-title{font-family:'Lora',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;color:var(--ink);letter-spacing:-0.02em;margin-bottom:52px;line-height:1.25}
@@ -56,8 +50,6 @@
   .feature-icon{width:46px;height:46px;background:var(--parchment);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:18px}
   .feature-card h3{font-family:'Lora',serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:8px}
   .feature-card p{font-size:0.88rem;line-height:1.75;color:var(--muted);font-weight:300}
-
-  /* AI TOOL */
   #arac{padding:100px 48px;background:var(--cream)}
   .tool-wrapper{max-width:940px;margin:0 auto;background:var(--warm-white);border:1px solid var(--sand);border-radius:28px;overflow:hidden;box-shadow:0 24px 80px var(--shadow)}
   .tool-header{background:linear-gradient(135deg,var(--forest) 0%,#2d4436 100%);padding:26px 36px;display:flex;align-items:center;justify-content:space-between}
@@ -66,17 +58,22 @@
   .tool-badge{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:5px 14px;font-size:0.78rem;color:rgba(255,255,255,0.85);font-weight:500;display:flex;align-items:center;gap:6px}
   .tool-badge::before{content:'✦';font-size:0.65rem}
   .tool-body{padding:32px}
-
+  .api-key-row{display:flex;gap:10px;margin-bottom:20px;align-items:center}
+  .api-key-input{flex:1;padding:10px 14px;background:var(--cream);border:1px solid var(--sand);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.88rem;color:var(--charcoal);outline:none;transition:border-color .2s}
+  .api-key-input:focus{border-color:var(--amber-light)}
+  .api-key-input::placeholder{color:var(--muted)}
+  .api-key-label{font-size:0.78rem;font-weight:500;color:var(--muted);white-space:nowrap}
+  .api-key-note{font-size:0.76rem;color:var(--muted);margin-bottom:16px;line-height:1.5}
+  .api-key-note a{color:var(--amber);text-decoration:none}
+  .api-key-note a:hover{text-decoration:underline}
   .tool-tabs{display:flex;gap:4px;background:var(--parchment);border-radius:12px;padding:4px;margin-bottom:20px;width:fit-content}
   .tab-btn{padding:8px 20px;border:none;background:transparent;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s}
   .tab-btn.active{background:var(--warm-white);color:var(--charcoal);box-shadow:0 1px 4px var(--shadow)}
   .tab-content{display:none}
   .tab-content.active{display:block}
-
   .text-input{width:100%;min-height:180px;padding:16px;background:var(--cream);border:1px solid var(--sand);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:0.95rem;line-height:1.75;color:var(--charcoal);resize:vertical;outline:none;transition:border-color .2s}
   .text-input:focus{border-color:var(--amber-light)}
   .text-input::placeholder{color:var(--muted);font-weight:300}
-
   .file-drop{border:2px dashed var(--sand);border-radius:12px;padding:40px 24px;text-align:center;cursor:pointer;transition:all .2s;background:var(--cream)}
   .file-drop:hover,.file-drop.dragover{border-color:var(--amber-light);background:rgba(200,121,65,0.04)}
   .file-drop-icon{font-size:2rem;margin-bottom:10px;color:var(--muted)}
@@ -84,26 +81,21 @@
   .file-drop strong{color:var(--charcoal);font-weight:500}
   .file-name-display{display:none;align-items:center;gap:10px;margin-top:12px;background:var(--parchment);border-radius:8px;padding:10px 14px;font-size:0.85rem;color:var(--charcoal)}
   #file-input{display:none}
-
   .options-row{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
   .option-chip{display:flex;align-items:center;gap:6px;background:var(--parchment);border:1px solid var(--sand);border-radius:100px;padding:6px 14px;cursor:pointer;font-size:0.82rem;font-weight:500;color:var(--muted);transition:all .2s;user-select:none}
   .option-chip input{display:none}
   .option-chip.selected{background:rgba(61,90,71,0.10);border-color:var(--forest-light);color:var(--forest)}
   .chip-dot{width:6px;height:6px;border-radius:50%;background:var(--sand);transition:background .2s}
   .option-chip.selected .chip-dot{background:var(--forest)}
-
   .convert-btn{width:100%;padding:16px;background:var(--forest);color:#fff;border:none;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;cursor:pointer;transition:all .25s;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:10px}
   .convert-btn:hover{background:#2d4436;transform:translateY(-1px)}
   .convert-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
-
   .loading-state{display:none;align-items:center;justify-content:center;gap:12px;padding:20px;color:var(--muted);font-size:0.9rem}
   .loading-state.visible{display:flex}
   .spinner{width:20px;height:20px;border:2px solid var(--sand);border-top-color:var(--forest);border-radius:50%;animation:spin .8s linear infinite}
   @keyframes spin{to{transform:rotate(360deg)}}
-
   .error-msg{display:none;background:rgba(180,60,40,0.08);border:1px solid rgba(180,60,40,0.2);border-radius:8px;padding:12px 16px;font-size:0.88rem;color:#b43c28;margin-top:12px}
   .error-msg.visible{display:block}
-
   .result-section{display:none;margin-top:28px;border-top:1px solid var(--sand);padding-top:24px}
   .result-section.visible{display:block}
   .result-label{font-size:0.76rem;font-weight:500;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-bottom:12px}
@@ -113,8 +105,6 @@
   .action-btn{display:flex;align-items:center;gap:7px;padding:9px 18px;background:var(--parchment);border:1px solid var(--sand);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:500;color:var(--charcoal);cursor:pointer;transition:all .2s}
   .action-btn:hover{background:var(--sand)}
   .action-btn.active{background:rgba(61,90,71,0.12);border-color:var(--forest-light);color:var(--forest)}
-
-  /* ABOUT */
   #hakkinda{padding:100px 48px;background:var(--parchment)}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1100px;margin:0 auto;align-items:start}
   .about-card{background:var(--warm-white);border:1px solid var(--sand);border-radius:20px;padding:32px;margin-bottom:24px}
@@ -129,38 +119,17 @@
   .about-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:8px}
   .about-list li{display:flex;align-items:flex-start;gap:12px;font-size:0.92rem;line-height:1.7;color:var(--charcoal)}
   .dot{width:8px;height:8px;background:var(--forest);border-radius:50%;margin-top:6px;flex-shrink:0}
-
-  /* FOOTER */
   footer{padding:48px;background:var(--ink);display:flex;align-items:center;justify-content:space-between}
   footer .logo{font-family:'Lora',serif;font-size:1.3rem;font-weight:600;color:var(--amber-light)}
   footer .logo span{color:var(--forest-light)}
   footer p{font-size:0.85rem;color:rgba(255,255,255,0.35)}
-
-  /* FADE IN */
   .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
   .fade-in.visible{opacity:1;transform:none}
-
-  /* RESPONSIVE */
-  @media(max-width:900px){
-    nav{padding:16px 24px}
-    .nav-links{gap:20px}
-    #anasayfa{padding:100px 24px 60px}
-    .hero-float{display:none}
-    #ozellikler,#arac,#hakkinda{padding:72px 24px}
-    .features-grid{grid-template-columns:1fr 1fr}
-    .about-grid{grid-template-columns:1fr;gap:40px}
-    footer{flex-direction:column;gap:12px;text-align:center;padding:36px 24px}
-  }
-  @media(max-width:600px){
-    .features-grid{grid-template-columns:1fr}
-    .tool-body{padding:20px}
-    .stat-row{grid-template-columns:1fr 1fr}
-  }
+  @media(max-width:900px){nav{padding:16px 24px}.nav-links{gap:20px}#anasayfa{padding:100px 24px 60px}.hero-float{display:none}#ozellikler,#arac,#hakkinda{padding:72px 24px}.features-grid{grid-template-columns:1fr 1fr}.about-grid{grid-template-columns:1fr;gap:40px}footer{flex-direction:column;gap:12px;text-align:center;padding:36px 24px}}
+  @media(max-width:600px){.features-grid{grid-template-columns:1fr}.tool-body{padding:20px}.stat-row{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
-
-<!-- ─── NAV ─── -->
 <nav>
   <a href="#anasayfa" class="nav-logo">Lexi<span>Dost</span></a>
   <ul class="nav-links">
@@ -169,8 +138,6 @@
     <li><a href="#hakkinda">Hakkında</a></li>
   </ul>
 </nav>
-
-<!-- ─── HERO ─── -->
 <section id="anasayfa">
   <div class="hero-bg"></div>
   <div class="hero-content fade-in">
@@ -186,139 +153,68 @@
     <div class="float-after">Metin anlaşılır. Cümleler kısa. Anlam tam. Okumak artık kolay.</div>
   </div>
 </section>
-
-<!-- ─── FEATURES ─── -->
 <section id="ozellikler">
   <div class="section-label">Özellikler</div>
   <h2 class="section-title">Neden LexiDost?</h2>
   <div class="features-grid">
-    <div class="feature-card fade-in">
-      <div class="feature-icon">📖</div>
-      <h3>Edebi Kalite Korunur</h3>
-      <p>Eserin sesi, tonu ve anlam bütünlüğüne saygı duyulur. Edebi kimlik asla kaybolmaz.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <div class="feature-icon">🧠</div>
-      <h3>Disleksi Odaklı Yazım</h3>
-      <p>Kısa paragraflar, net cümle yapısı ve uygun kelime boşluğuyla okuma güçlüğü azaltılır.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <div class="feature-icon">⚡</div>
-      <h3>Belge &amp; Metin Desteği</h3>
-      <p>Metin yapıştırabilir ya da TXT/PDF dosya yükleyebilirsiniz.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <div class="feature-icon">🎨</div>
-      <h3>Görsel Okuma Modu</h3>
-      <p>Arttırılmış satır aralığı ve harf boşluğuyla özel disleksi görüntüleme modu.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <div class="feature-icon">📋</div>
-      <h3>Kopyala &amp; İndir</h3>
-      <p>Dönüştürülen metni tek tıkla kopyalayın veya TXT dosyası olarak indirin.</p>
-    </div>
-    <div class="feature-card fade-in">
-      <div class="feature-icon">🌿</div>
-      <h3>Türkçe Odaklı AI</h3>
-      <p>Türkçenin dilbilgisel inceliklerine duyarlı, Türkçe eserler için optimize edilmiş model.</p>
-    </div>
+    <div class="feature-card fade-in"><div class="feature-icon">📖</div><h3>Edebi Kalite Korunur</h3><p>Eserin sesi, tonu ve anlam bütünlüğüne saygı duyulur. Edebi kimlik asla kaybolmaz.</p></div>
+    <div class="feature-card fade-in"><div class="feature-icon">🧠</div><h3>Disleksi Odaklı Yazım</h3><p>Kısa paragraflar, net cümle yapısı ve uygun kelime boşluğuyla okuma güçlüğü azaltılır.</p></div>
+    <div class="feature-card fade-in"><div class="feature-icon">⚡</div><h3>Belge &amp; Metin Desteği</h3><p>Metin yapıştırabilir ya da TXT dosya yükleyebilirsiniz.</p></div>
+    <div class="feature-card fade-in"><div class="feature-icon">🎨</div><h3>Görsel Okuma Modu</h3><p>Arttırılmış satır aralığı ve harf boşluğuyla özel disleksi görüntüleme modu.</p></div>
+    <div class="feature-card fade-in"><div class="feature-icon">📋</div><h3>Kopyala &amp; İndir</h3><p>Dönüştürülen metni tek tıkla kopyalayın veya TXT dosyası olarak indirin.</p></div>
+    <div class="feature-card fade-in"><div class="feature-icon">🌿</div><h3>Türkçe Odaklı AI</h3><p>Türkçenin dilbilgisel inceliklerine duyarlı, Türkçe eserler için optimize edilmiş model.</p></div>
   </div>
 </section>
-
-<!-- ─── AI TOOL ─── -->
 <section id="arac">
   <div class="section-label" style="text-align:center">AI Araç</div>
   <h2 class="section-title" style="text-align:center;margin-bottom:40px">Metninizi Dönüştürün</h2>
   <div class="tool-wrapper">
     <div class="tool-header">
-      <div>
-        <h2>LexiDost AI</h2>
-        <p>Edebi kalite koruma modeli · Türkçe optimize</p>
-      </div>
+      <div><h2>LexiDost AI</h2><p>Edebi kalite koruma modeli · Türkçe optimize</p></div>
       <div class="tool-badge">Aktif</div>
     </div>
     <div class="tool-body">
-      <!-- Tabs -->
+      <p class="api-key-note">Gemini API anahtarınızı girin. Ücretsiz key almak için: <a href="https://aistudio.google.com/apikey" target="_blank">aistudio.google.com/apikey</a></p>
+      <div class="api-key-row">
+        <span class="api-key-label">API Key:</span>
+        <input type="password" class="api-key-input" id="api-key-input" placeholder="AIzaSy...">
+      </div>
       <div class="tool-tabs">
         <button class="tab-btn active" data-tab="text">Metin Gir</button>
         <button class="tab-btn" data-tab="file">Dosya Yükle</button>
       </div>
-
-      <!-- Text tab -->
       <div id="tab-text" class="tab-content active">
         <textarea class="text-input" id="text-input" placeholder="Dönüştürmek istediğiniz metni buraya yapıştırın…"></textarea>
       </div>
-
-      <!-- File tab -->
       <div id="tab-file" class="tab-content">
         <div class="file-drop" id="file-drop">
           <div class="file-drop-icon">📄</div>
-          <p><strong>Dosya seçin veya buraya bırakın</strong><br>TXT ve PDF desteklenmektedir</p>
-          <input type="file" id="file-input" accept=".txt,.pdf">
+          <p><strong>Dosya seçin veya buraya bırakın</strong><br>TXT dosyası desteklenmektedir</p>
+          <input type="file" id="file-input" accept=".txt">
         </div>
-        <div class="file-name-display" id="file-name-display">
-          <span>📎</span>
-          <span id="file-name-text"></span>
-        </div>
+        <div class="file-name-display" id="file-name-display"><span>📎</span><span id="file-name-text"></span></div>
       </div>
-
-      <!-- Options -->
       <div class="options-row">
-        <label class="option-chip selected" title="Uzun cümleleri böl">
-          <input type="checkbox" value="kisa" checked>
-          <span class="chip-dot"></span>✦ Kısa cümleler
-        </label>
-        <label class="option-chip selected" title="Edilgen yapıları etken yap">
-          <input type="checkbox" value="aktif" checked>
-          <span class="chip-dot"></span>✦ Aktif ses
-        </label>
-        <label class="option-chip selected" title="Paragrafları böl">
-          <input type="checkbox" value="paragraf" checked>
-          <span class="chip-dot"></span>✦ Paragraf böl
-        </label>
-        <label class="option-chip" title="Anahtar kelimeleri vurgula">
-          <input type="checkbox" value="vurgu">
-          <span class="chip-dot"></span>✦ Anahtar kelime vurgula
-        </label>
+        <label class="option-chip selected"><input type="checkbox" value="kisa" checked><span class="chip-dot"></span>✦ Kısa cümleler</label>
+        <label class="option-chip selected"><input type="checkbox" value="aktif" checked><span class="chip-dot"></span>✦ Aktif ses</label>
+        <label class="option-chip selected"><input type="checkbox" value="paragraf" checked><span class="chip-dot"></span>✦ Paragraf böl</label>
+        <label class="option-chip"><input type="checkbox" value="vurgu"><span class="chip-dot"></span>✦ Anahtar kelime vurgula</label>
       </div>
-
-      <button class="convert-btn" id="convert-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-        Disleksi Dostu Hale Getir
-      </button>
-
-      <div class="loading-state" id="loading-state">
-        <div class="spinner"></div>
-        Metin analiz ediliyor, edebi kalite korunuyor…
-      </div>
+      <button class="convert-btn" id="convert-btn">Disleksi Dostu Hale Getir</button>
+      <div class="loading-state" id="loading-state"><div class="spinner"></div>Metin analiz ediliyor…</div>
       <div class="error-msg" id="error-msg"></div>
-
-      <!-- Result -->
       <div class="result-section" id="result-section">
         <div class="result-label">Dönüştürülmüş Metin</div>
-        <div class="result-box" id="result-box">
-          <div class="result-text" id="result-text"></div>
-        </div>
+        <div class="result-box" id="result-box"><div class="result-text" id="result-text"></div></div>
         <div class="result-actions">
-          <button class="action-btn" id="copy-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            Kopyala
-          </button>
-          <button class="action-btn" id="download-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            İndir
-          </button>
-          <button class="action-btn" id="dyslexia-btn">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
-            Disleksi Modu
-          </button>
+          <button class="action-btn" id="copy-btn">Kopyala</button>
+          <button class="action-btn" id="download-btn">İndir</button>
+          <button class="action-btn" id="dyslexia-btn">Disleksi Modu</button>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ─── ABOUT ─── -->
 <section id="hakkinda">
   <div class="about-grid">
     <div class="fade-in">
@@ -336,7 +232,7 @@
     <div class="about-text fade-in">
       <div class="section-label">Hakkında</div>
       <h2 class="section-title">Edebiyat<br>herkese aittir</h2>
-      <p><strong>LexiDost</strong>, disleksi, disgrafi ve benzeri okuma-yazma güçlükleri yaşayan bireylerin edebi eserlere ve yazılı içeriklere eşit erişim sağlaması için tasarlanmış bir yapay zeka platformudur.</p>
+      <p><strong>LexiDost</strong>, disleksi, disgrafi ve benzeri okuma-yazma güçlükleri yaşayan bireylerin edebi eserlere eşit erişim sağlaması için tasarlanmış bir yapay zeka platformudur.</p>
       <p>Pek çok insan, bir romanın ya da şiirin güzelliğine ulaşmakta güçlük çeker. Bu güçlük zekadan değil, metnin biçiminden kaynaklanır. <strong>Biz bu biçimi dönüştürüyoruz, özü koruyoruz.</strong></p>
       <ul class="about-list">
         <li><div class="dot"></div><span>Edebi özgünlük ve yazarın sesi her zaman korunur</span></li>
@@ -347,168 +243,54 @@
     </div>
   </div>
 </section>
-
-<!-- ─── FOOTER ─── -->
 <footer>
   <div class="logo">Lexi<span>Dost</span></div>
   <p>© 2025 LexiDost · Disleksi dostu bir gelecek için</p>
 </footer>
-
 <script>
-// ── BACKEND URL ──────────────────────────────────────────
-// Railway deploy ettikten sonra buraya Railway URL'ini yapıştır:
-// Örnek: const BACKEND = 'https://lexidost-backend.up.railway.app';
-const BACKEND = 'https://lexiadost-backend-production.up.railway.app';
-// ─────────────────────────────────────────────────────────
-
-// NAV active link
-window.addEventListener('scroll', () => {
-  let cur = '';
-  document.querySelectorAll('section[id]').forEach(s => {
-    if (window.scrollY >= s.offsetTop - 100) cur = s.id;
-  });
-  document.querySelectorAll('.nav-links a').forEach(a =>
-    a.classList.toggle('active', a.getAttribute('href') === '#' + cur)
-  );
-});
-
-// Scroll fade
-const obs = new IntersectionObserver(entries =>
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-  { threshold: 0.1 }
-);
-document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-
-// Tabs
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
-  });
-});
-
-// Chips
-document.querySelectorAll('.option-chip').forEach(c =>
-  c.addEventListener('click', () => c.classList.toggle('selected'))
-);
-
-// File
-let uploadedFile = null;
-const fileDrop = document.getElementById('file-drop');
-const fileInput = document.getElementById('file-input');
-fileDrop.addEventListener('click', () => fileInput.click());
-fileDrop.addEventListener('dragover', e => { e.preventDefault(); fileDrop.classList.add('dragover'); });
-fileDrop.addEventListener('dragleave', () => fileDrop.classList.remove('dragover'));
-fileDrop.addEventListener('drop', e => {
-  e.preventDefault(); fileDrop.classList.remove('dragover');
-  if (e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]);
-});
-fileInput.addEventListener('change', () => { if (fileInput.files[0]) loadFile(fileInput.files[0]); });
-
-function loadFile(file) {
-  uploadedFile = file;
-  document.getElementById('file-name-text').textContent = file.name;
-  document.getElementById('file-name-display').style.display = 'flex';
-}
-
-// Convert
-document.getElementById('convert-btn').addEventListener('click', async () => {
-  const errEl = document.getElementById('error-msg');
-  errEl.classList.remove('visible');
-
-  const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
-
-  if (BACKEND === 'BURAYA_RAILWAY_URL_YAZAR') {
-    errEl.textContent = 'Lütfen index.html içindeki BACKEND değişkenine Railway URL\'ini ekleyin.';
-    errEl.classList.add('visible'); return;
-  }
-
-  const opts = [...document.querySelectorAll('.option-chip.selected input')].map(i => i.value);
-  const optLines = [
-    opts.includes('kisa')     && '- Uzun cümleleri kısa ve net cümlelere böl.',
-    opts.includes('aktif')    && '- Edilgen yapıları etken yapıya çevir.',
-    opts.includes('paragraf') && '- Uzun paragrafları 3-4 cümlelik kısa bloklara ayır.',
-    opts.includes('vurgu')    && '- Anahtar kavramları **kalın** yaz.',
-  ].filter(Boolean).join('\n');
-
-  document.getElementById('convert-btn').disabled = true;
+window.addEventListener('scroll',()=>{let c='';document.querySelectorAll('section[id]').forEach(s=>{if(window.scrollY>=s.offsetTop-100)c=s.id;});document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+c));});
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+document.querySelectorAll('.tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));btn.classList.add('active');document.getElementById('tab-'+btn.dataset.tab).classList.add('active');});});
+document.querySelectorAll('.option-chip').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('selected')));
+let fileText=null;
+const fileDrop=document.getElementById('file-drop');
+const fileInput=document.getElementById('file-input');
+fileDrop.addEventListener('click',()=>fileInput.click());
+fileDrop.addEventListener('dragover',e=>{e.preventDefault();fileDrop.classList.add('dragover');});
+fileDrop.addEventListener('dragleave',()=>fileDrop.classList.remove('dragover'));
+fileDrop.addEventListener('drop',e=>{e.preventDefault();fileDrop.classList.remove('dragover');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0]);});
+fileInput.addEventListener('change',()=>{if(fileInput.files[0])loadFile(fileInput.files[0]);});
+function loadFile(file){const r=new FileReader();r.onload=e=>{fileText=e.target.result;document.getElementById('file-name-text').textContent=file.name;document.getElementById('file-name-display').style.display='flex';};r.readAsText(file,'UTF-8');}
+document.getElementById('convert-btn').addEventListener('click',async()=>{
+  const errEl=document.getElementById('error-msg');errEl.classList.remove('visible');
+  const apiKey=document.getElementById('api-key-input').value.trim();
+  if(!apiKey){errEl.textContent='Lütfen Gemini API anahtarınızı girin.';errEl.classList.add('visible');return;}
+  const activeTab=document.querySelector('.tab-btn.active').dataset.tab;
+  let inputText='';
+  if(activeTab==='file'){if(!fileText){errEl.textContent='Lütfen bir TXT dosyası seçin.';errEl.classList.add('visible');return;}inputText=fileText;}
+  else{inputText=document.getElementById('text-input').value.trim();if(!inputText){errEl.textContent='Lütfen bir metin girin.';errEl.classList.add('visible');return;}}
+  const opts=[...document.querySelectorAll('.option-chip.selected input')].map(i=>i.value);
+  const optLines=[opts.includes('kisa')&&'- Uzun cümleleri kısa ve net cümlelere böl.',opts.includes('aktif')&&'- Edilgen yapıları etken yapıya çevir.',opts.includes('paragraf')&&'- Uzun paragrafları 3-4 cümlelik kısa bloklara ayır.',opts.includes('vurgu')&&'- Anahtar kavramları **kalın** yaz.'].filter(Boolean).join('\n');
+  const prompt=`Sen disleksi ve disgrafi dostu metin dönüştürme uzmanısın. Aşağıdaki Türkçe metni, edebi kalitesini ve anlam bütünlüğünü koruyarak disleksi dostu hale getir.\n\nUygula:\n${optLines}\n\nKurallar:\n- Yazarın sesini ve üslubunu koru\n- Anlam kaybı olmasın\n- Sadece dönüştürülmüş metni yaz, açıklama ekleme\n\nMetin:\n${inputText}`;
+  document.getElementById('convert-btn').disabled=true;
   document.getElementById('loading-state').classList.add('visible');
   document.getElementById('result-section').classList.remove('visible');
-
-  try {
-    let res;
-
-    if (activeTab === 'file') {
-      // Dosya modu — PDF veya TXT FormData ile gönder
-      if (!uploadedFile) {
-        errEl.textContent = 'Lütfen bir dosya seçin.';
-        errEl.classList.add('visible');
-        return;
-      }
-      const form = new FormData();
-      form.append('file', uploadedFile);
-      form.append('options', optLines);
-      res = await fetch(`${BACKEND}/api/convert-file`, {
-        method: 'POST',
-        body: form
-      });
-    } else {
-      // Metin modu
-      const inputText = document.getElementById('text-input').value.trim();
-      if (!inputText) {
-        errEl.textContent = 'Lütfen bir metin girin.';
-        errEl.classList.add('visible'); return;
-      }
-      res = await fetch(`${BACKEND}/api/convert`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: inputText, options: optLines })
-      });
-    }
-
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      throw new Error(err.error || `Sunucu hatası: ${res.status}`);
-    }
-    const data = await res.json();
-    document.getElementById('result-text').textContent = data.result;
+  try{
+    const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.4,maxOutputTokens:8192}})});
+    if(!res.ok){const err=await res.json().catch(()=>({}));throw new Error(err?.error?.message||`API hatası: ${res.status}`);}
+    const data=await res.json();
+    const result=data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    if(!result)throw new Error('Yanıt alınamadı.');
+    document.getElementById('result-text').textContent=result;
     document.getElementById('result-section').classList.add('visible');
-    document.getElementById('result-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  } catch (err) {
-    errEl.textContent = 'Hata: ' + err.message;
-    errEl.classList.add('visible');
-  } finally {
-    document.getElementById('loading-state').classList.remove('visible');
-    document.getElementById('convert-btn').disabled = false;
-  }
+    document.getElementById('result-section').scrollIntoView({behavior:'smooth',block:'start'});
+  }catch(err){errEl.textContent='Hata: '+err.message;errEl.classList.add('visible');}
+  finally{document.getElementById('loading-state').classList.remove('visible');document.getElementById('convert-btn').disabled=false;}
 });
-
-// Copy
-document.getElementById('copy-btn').addEventListener('click', async () => {
-  await navigator.clipboard.writeText(document.getElementById('result-text').textContent);
-  const btn = document.getElementById('copy-btn');
-  btn.textContent = '✓ Kopyalandı';
-  setTimeout(() => { btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Kopyala'; }, 2000);
-});
-
-// Download
-document.getElementById('download-btn').addEventListener('click', () => {
-  const blob = new Blob([document.getElementById('result-text').textContent], { type: 'text/plain;charset=utf-8' });
-  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-  a.download = 'lexidost-metin.txt'; a.click();
-});
-
-// Dyslexia mode
-const dyslexiaBtn = document.getElementById('dyslexia-btn');
-const resultBox = document.getElementById('result-box');
-dyslexiaBtn.addEventListener('click', () => {
-  const on = resultBox.classList.toggle('dyslexia-mode');
-  dyslexiaBtn.classList.toggle('active', on);
-  dyslexiaBtn.querySelector('svg').style.display = 'none';
-  dyslexiaBtn.childNodes[dyslexiaBtn.childNodes.length - 1].textContent = on ? ' Modu Kapat' : ' Disleksi Modu';
-});
+document.getElementById('copy-btn').addEventListener('click',async()=>{await navigator.clipboard.writeText(document.getElementById('result-text').textContent);const btn=document.getElementById('copy-btn');btn.textContent='✓ Kopyalandı';setTimeout(()=>{btn.textContent='Kopyala';},2000);});
+document.getElementById('download-btn').addEventListener('click',()=>{const blob=new Blob([document.getElementById('result-text').textContent],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='lexidost-metin.txt';a.click();});
+document.getElementById('dyslexia-btn').addEventListener('click',()=>{const on=document.getElementById('result-box').classList.toggle('dyslexia-mode');document.getElementById('dyslexia-btn').classList.toggle('active',on);document.getElementById('dyslexia-btn').textContent=on?'Modu Kapat':'Disleksi Modu';});
 </script>
 </body>
 </html>
