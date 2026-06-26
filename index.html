@@ -260,7 +260,7 @@ fileInput.addEventListener('change',()=>{if(fileInput.files[0])loadFile(fileInpu
 function loadFile(file){const r=new FileReader();r.onload=e=>{fileText=e.target.result;document.getElementById('file-name-text').textContent=file.name;document.getElementById('file-name-display').style.display='flex';};r.readAsText(file,'UTF-8');}
 document.getElementById('convert-btn').addEventListener('click',async()=>{
   const errEl=document.getElementById('error-msg');errEl.classList.remove('visible');
-  const apiKey='AIzaSyB2kha1GrLFOFjIs3DVG29TzKKi9vggd3E';
+  const apiKey='6I7UHCjd-JbIgF6dYdSoilvYVOdJ0UPSdO7cl1JXeO0Cg';
   if(!apiKey){errEl.textContent='Lütfen Gemini API anahtarınızı girin.';errEl.classList.add('visible');return;}
   const activeTab=document.querySelector('.tab-btn.active').dataset.tab;
   let inputText='';
