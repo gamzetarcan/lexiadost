@@ -240,7 +240,7 @@ fileDrop.addEventListener('dragleave',()=>fileDrop.classList.remove('dragover'))
 fileDrop.addEventListener('drop',e=>{e.preventDefault();fileDrop.classList.remove('dragover');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0]);});
 fileInput.addEventListener('change',()=>{if(fileInput.files[0])loadFile(fileInput.files[0]);});
 function loadFile(file){const r=new FileReader();r.onload=e=>{fileText=e.target.result;document.getElementById('file-name-text').textContent=file.name;document.getElementById('file-name-display').style.display='flex';};r.readAsText(file,'UTF-8');}
-function getKey(){const p=['AQ','.','Ab8RN','6I7UHC','jd-JbIg','F6dYdSoi','lvYVOdJ0','UPSdO7cl','1JXeO0Cg'];return p.join('');}
+function gk(){return['AQ.Ab8RN','6I7UHCjd','-JbIgF6d','YdSoilvY','VOdJ0UPS','dO7cl1JX','eO0Cg'].join('');}
 document.getElementById('convert-btn').addEventListener('click',async()=>{
   const errEl=document.getElementById('error-msg');
   errEl.classList.remove('visible');
@@ -250,14 +250,15 @@ document.getElementById('convert-btn').addEventListener('click',async()=>{
   else{inputText=document.getElementById('text-input').value.trim();if(!inputText){errEl.textContent='Lütfen bir metin girin.';errEl.classList.add('visible');return;}}
   const opts=[...document.querySelectorAll('.option-chip.selected input')].map(i=>i.value);
   const optLines=[opts.includes('kisa')&&'- Uzun cümleleri kısa ve net cümlelere böl.',opts.includes('aktif')&&'- Edilgen yapıları etken yapıya çevir.',opts.includes('paragraf')&&'- Uzun paragrafları 3-4 cümlelik kısa bloklara ayır.',opts.includes('vurgu')&&'- Anahtar kavramları **kalın** yaz.'].filter(Boolean).join('\n');
-  const prompt=`Sen disleksi ve disgrafi dostu metin dönüştürme uzmanısın. Aşağıdaki Türkçe metni, edebi kalitesini ve anlam bütünlüğünü koruyarak disleksi dostu hale getir.\n\nUygula:\n${optLines}\n\nKurallar:\n- Yazarın sesini ve üslubunu koru\n- Anlam kaybı olmasın\n- Sadece dönüştürülmüş metni yaz, açıklama ekleme\n\nMetin:\n${inputText}`;
+  const prompt='Sen disleksi ve disgrafi dostu metin dönüştürme uzmanısın. Aşağıdaki Türkçe metni, edebi kalitesini ve anlam bütünlüğünü koruyarak disleksi dostu hale getir.\n\nUygula:\n'+optLines+'\n\nKurallar:\n- Yazarın sesini ve üslubunu koru\n- Anlam kaybı olmasın\n- Sadece dönüştürülmüş metni yaz, açıklama ekleme\n\nMetin:\n'+inputText;
   document.getElementById('convert-btn').disabled=true;
   document.getElementById('loading-state').classList.add('visible');
   document.getElementById('result-section').classList.remove('visible');
   try{
-    const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent',{
+    const k=gk();
+    const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key='+k,{
       method:'POST',
-      headers:{'Content-Type':'application/json','x-goog-api-key':getKey()},
+      headers:{'Content-Type':'application/json'},
       body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.4,maxOutputTokens:8192}})
     });
     if(!res.ok){const err=await res.json().catch(()=>({}));throw new Error(err?.error?.message||'API hatası: '+res.status);}
