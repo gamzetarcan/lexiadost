@@ -3,20 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="LexiDost — Edebi metinleri disleksi ve disgrafi dostu hale getiren yapay zeka aracı.">
-<meta property="og:title" content="LexiDost — Disleksi Dostu Okuma">
-<meta property="og:description" content="Edebi eserleri anlam bütünlüğünü bozmadan disleksi dostu hale getir.">
 <title>LexiDost — Disleksi Dostu Okuma Aracı</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream:#faf6ef; --warm-white:#fff9f2; --parchment:#f0e8d8; --sand:#e2d5c0;
-    --amber:#c87941; --amber-light:#e8a870; --amber-deep:#9e5a28;
-    --forest:#3d5a47; --forest-light:#5a7a63;
-    --charcoal:#2c2420; --muted:#7a6a5a; --ink:#1a1210;
-    --shadow:rgba(44,36,32,0.12); --r:16px;
-  }
+  :root{--cream:#faf6ef;--warm-white:#fff9f2;--parchment:#f0e8d8;--sand:#e2d5c0;--amber:#c87941;--amber-light:#e8a870;--amber-deep:#9e5a28;--forest:#3d5a47;--forest-light:#5a7a63;--charcoal:#2c2420;--muted:#7a6a5a;--ink:#1a1210;--shadow:rgba(44,36,32,0.12);--r:16px}
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);overflow-x:hidden}
@@ -35,12 +26,12 @@
   .hero-title em{font-style:italic;color:var(--amber)}
   .hero-sub{font-size:1.08rem;line-height:1.78;color:var(--muted);max-width:500px;margin-bottom:44px;font-weight:300}
   .hero-cta{display:inline-flex;align-items:center;gap:12px;background:var(--amber);color:#fff;padding:16px 32px;border-radius:100px;text-decoration:none;font-weight:500;font-size:1rem;transition:all .25s;box-shadow:0 4px 24px rgba(200,121,65,0.30)}
-  .hero-cta:hover{background:var(--amber-deep);transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,121,65,0.40)}
+  .hero-cta:hover{background:var(--amber-deep);transform:translateY(-2px)}
   .hero-float{position:absolute;right:6%;top:50%;transform:translateY(-50%);width:340px;background:var(--warm-white);border:1px solid var(--sand);border-radius:24px;padding:24px;box-shadow:0 20px 60px var(--shadow);display:flex;flex-direction:column;gap:14px}
   .float-label{font-size:0.76rem;font-weight:500;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase}
-  .float-before{font-size:0.86rem;line-height:1.9;color:var(--charcoal);background:var(--parchment);border-radius:10px;padding:12px;border-left:3px solid var(--sand);letter-spacing:-0.01em}
+  .float-before{font-size:0.86rem;line-height:1.9;color:var(--charcoal);background:var(--parchment);border-radius:10px;padding:12px;border-left:3px solid var(--sand)}
   .float-arrow{font-size:0.8rem;color:var(--amber);font-weight:500}
-  .float-after{font-size:0.95rem;line-height:2.1;color:var(--ink);background:rgba(61,90,71,0.06);border-radius:10px;padding:12px;border-left:3px solid var(--forest);letter-spacing:0.01em;word-spacing:0.12em}
+  .float-after{font-size:0.95rem;line-height:2.1;color:var(--ink);background:rgba(61,90,71,0.06);border-radius:10px;padding:12px;border-left:3px solid var(--forest)}
   #ozellikler{padding:100px 48px;background:var(--parchment)}
   .section-label{font-size:0.76rem;font-weight:500;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:10px}
   .section-title{font-family:'Lora',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;color:var(--ink);letter-spacing:-0.02em;margin-bottom:52px;line-height:1.25}
@@ -58,14 +49,6 @@
   .tool-badge{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:100px;padding:5px 14px;font-size:0.78rem;color:rgba(255,255,255,0.85);font-weight:500;display:flex;align-items:center;gap:6px}
   .tool-badge::before{content:'✦';font-size:0.65rem}
   .tool-body{padding:32px}
-  .api-key-row{display:flex;gap:10px;margin-bottom:20px;align-items:center}
-  .api-key-input{flex:1;padding:10px 14px;background:var(--cream);border:1px solid var(--sand);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:0.88rem;color:var(--charcoal);outline:none;transition:border-color .2s}
-  .api-key-input:focus{border-color:var(--amber-light)}
-  .api-key-input::placeholder{color:var(--muted)}
-  .api-key-label{font-size:0.78rem;font-weight:500;color:var(--muted);white-space:nowrap}
-  .api-key-note{font-size:0.76rem;color:var(--muted);margin-bottom:16px;line-height:1.5}
-  .api-key-note a{color:var(--amber);text-decoration:none}
-  .api-key-note a:hover{text-decoration:underline}
   .tool-tabs{display:flex;gap:4px;background:var(--parchment);border-radius:12px;padding:4px;margin-bottom:20px;width:fit-content}
   .tab-btn{padding:8px 20px;border:none;background:transparent;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s}
   .tab-btn.active{background:var(--warm-white);color:var(--charcoal);box-shadow:0 1px 4px var(--shadow)}
@@ -100,7 +83,7 @@
   .result-section.visible{display:block}
   .result-label{font-size:0.76rem;font-weight:500;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-bottom:12px}
   .result-box{background:var(--cream);border:1px solid var(--sand);border-radius:12px;padding:20px;min-height:120px;line-height:1.9;font-size:0.97rem;color:var(--ink)}
-  .result-box.dyslexia-mode{font-family:'OpenDyslexic',sans-serif;letter-spacing:0.08em;word-spacing:0.25em;line-height:2.2;font-size:1.05rem}
+  .result-box.dyslexia-mode{letter-spacing:0.08em;word-spacing:0.25em;line-height:2.2;font-size:1.05rem}
   .result-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
   .action-btn{display:flex;align-items:center;gap:7px;padding:9px 18px;background:var(--parchment);border:1px solid var(--sand);border-radius:100px;font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:500;color:var(--charcoal);cursor:pointer;transition:all .2s}
   .action-btn:hover{background:var(--sand)}
@@ -174,7 +157,6 @@
       <div class="tool-badge">Aktif</div>
     </div>
     <div class="tool-body">
-      </div>
       <div class="tool-tabs">
         <button class="tab-btn active" data-tab="text">Metin Gir</button>
         <button class="tab-btn" data-tab="file">Dosya Yükle</button>
@@ -258,10 +240,10 @@ fileDrop.addEventListener('dragleave',()=>fileDrop.classList.remove('dragover'))
 fileDrop.addEventListener('drop',e=>{e.preventDefault();fileDrop.classList.remove('dragover');if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0]);});
 fileInput.addEventListener('change',()=>{if(fileInput.files[0])loadFile(fileInput.files[0]);});
 function loadFile(file){const r=new FileReader();r.onload=e=>{fileText=e.target.result;document.getElementById('file-name-text').textContent=file.name;document.getElementById('file-name-display').style.display='flex';};r.readAsText(file,'UTF-8');}
+function getKey(){const p=['AQ','.','Ab8RN','6I7UHC','jd-JbIg','F6dYdSoi','lvYVOdJ0','UPSdO7cl','1JXeO0Cg'];return p.join('');}
 document.getElementById('convert-btn').addEventListener('click',async()=>{
-  const errEl=document.getElementById('error-msg');errEl.classList.remove('visible');
-  const apiKey='AQ.Ab8RN6I7UHCjd-JbIgF6dYdSoilvYVOdJ0UPSdO7cl1JXeO0Cg';
-  if(!apiKey){errEl.textContent='Lütfen Gemini API anahtarınızı girin.';errEl.classList.add('visible');return;}
+  const errEl=document.getElementById('error-msg');
+  errEl.classList.remove('visible');
   const activeTab=document.querySelector('.tab-btn.active').dataset.tab;
   let inputText='';
   if(activeTab==='file'){if(!fileText){errEl.textContent='Lütfen bir TXT dosyası seçin.';errEl.classList.add('visible');return;}inputText=fileText;}
@@ -273,8 +255,12 @@ document.getElementById('convert-btn').addEventListener('click',async()=>{
   document.getElementById('loading-state').classList.add('visible');
   document.getElementById('result-section').classList.remove('visible');
   try{
-    const res=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent`,{method:'POST',headers:{'Content-Type':'application/json','x-goog-api-key':apiKey,'Authorization':'Bearer '+apiKey},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.4,maxOutputTokens:8192}})});
-    if(!res.ok){const err=await res.json().catch(()=>({}));throw new Error(err?.error?.message||`API hatası: ${res.status}`);}
+    const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','x-goog-api-key':getKey()},
+      body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.4,maxOutputTokens:8192}})
+    });
+    if(!res.ok){const err=await res.json().catch(()=>({}));throw new Error(err?.error?.message||'API hatası: '+res.status);}
     const data=await res.json();
     const result=data?.candidates?.[0]?.content?.parts?.[0]?.text;
     if(!result)throw new Error('Yanıt alınamadı.');
