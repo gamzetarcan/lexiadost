@@ -256,10 +256,10 @@ document.getElementById('convert-btn').addEventListener('click',async()=>{
   document.getElementById('result-section').classList.remove('visible');
   try{
     const k=gk();
-    const res=await fetch('https://lexiadost-backend.onrender.com/api/convert+',{
+    const res=await fetch('https://lexiadost-backend.onrender.com/api/convert',{
       method:'POST',
       headers:{'Content-Type':'application/json','x-goog-api-key':k},
-      body:JSON.stringify({contents:[{parts:[{text:prompt}]}],generationConfig:{temperature:0.4,maxOutputTokens:8192}})
+      body:JSON.stringify({text:inputText,options:optLines})
     });
     if(!res.ok){const err=await res.json().catch(()=>({}));throw new Error(err?.error?.message||'API hatası: '+res.status);}
     const data=await res.json();
