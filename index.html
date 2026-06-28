@@ -263,7 +263,7 @@ document.getElementById('convert-btn').addEventListener('click',async()=>{
     });
     if(!res.ok){const err=await res.json().catch(()=>({}));throw new Error(err?.error?.message||'API hatası: '+res.status);}
     const data=await res.json();
-    const result=data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const result=data?.result;
     if(!result)throw new Error('Yanıt alınamadı.');
     document.getElementById('result-text').textContent=result;
     document.getElementById('result-section').classList.add('visible');
